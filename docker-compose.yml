@@ -1,0 +1,14 @@
+services:
+  api:
+    container_name: bookstore-inventory-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3000"
+    environment:
+      PORT: 3000
+      LOCAL_CURRENCY: EUR
+      DEFAULT_EXCHANGE_RATE: 0.85
+      MARGIN_PERCENTAGE: 40
+    restart: unless-stopped

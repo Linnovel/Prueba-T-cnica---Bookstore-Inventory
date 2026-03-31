@@ -43,6 +43,45 @@ npm run build
 npm start
 ```
 
+## Docker (PLUS)
+
+Este proyecto esta dockerizado para ejecutarse con Docker Desktop.
+
+### Levantar con Docker Compose
+
+```bash
+docker compose up --build
+```
+
+La API queda disponible en:
+
+- `http://localhost:3001`
+
+### Detener contenedores
+
+```bash
+docker compose down
+```
+
+### Reconstruir imagen
+
+```bash
+docker compose build --no-cache
+```
+
+### Logs de la API
+
+```bash
+docker compose logs -f api
+```
+
+### Probar en Postman
+
+- Selecciona el environment `Bookstore Local`
+- Asegurate de usar `baseUrl = http://localhost:3001`
+- Ejecuta `GET /health`
+- Debe responder: `{ "status": "ok" }`
+
 ## Endpoints
 
 - `POST /books` Crear libro
